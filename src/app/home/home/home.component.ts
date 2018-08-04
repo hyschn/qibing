@@ -7,17 +7,17 @@ import { AppService } from '../../app.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  json: JSON;
+  config: JSON;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getHomeConfig();
   }
 
-  getHeroes(): void {
+  getHomeConfig(): void {
     this.appService.getConfigJson().subscribe(json => {
-      this.json = json;
-      console.log(this.json);
+      this.config = json.home;
+      console.log(this.config);
     });
   }
 }
