@@ -2,5 +2,14 @@
     "home": {
         "top": "序/孙子序.md",
         "blogs": ["战略运筹/作战篇.md", "作战指挥/兵势篇.md"]
-    }
+    },
+    "blog": [
+        { "topic": "序", "articles": ["孙子序"] },
+        { "topic": "战略运筹", "articles": ["始计篇", "作战篇", "谋攻篇"] },
+        { "topic": "作战指挥", "articles": ["军形篇", "兵势篇", "虚实篇"] },
+        { "topic": "战场机变", "articles": ["", "", ""] },
+        { "topic": "军事地理", "articles": ["", "", ""] },
+        { "topic": "特殊战法", "articles": ["", "", ""] }
+    ],
+    "profile": "profile"
 }

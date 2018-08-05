@@ -4,5 +4,4 @@ import { Component, OnInit } from '@angular/core';
   selector: 'qibing-root',
   template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-}
+export class AppComponent { }

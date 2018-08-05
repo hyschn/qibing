@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavComponent } from './global/nav/nav.component';
 import { HomeComponent } from './home/home/home.component';
 import { BlogComponent } from './blog/blog/blog.component';
-
+import { ProfileComponent } from './profile/profile/profile.component';
 
 const homeRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  // { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'blog', component: BlogComponent },
 ];
 
