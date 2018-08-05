@@ -9,6 +9,7 @@ import { AppService } from '../../app.service';
 export class HomeComponent implements OnInit {
   config: JSON;
   topTitle: string;
+  topContent: string;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
@@ -19,7 +20,12 @@ export class HomeComponent implements OnInit {
     this.appService.getConfigJson().subscribe(json => {
       this.config = json.home;
       this.topTitle = this.config['top'];
-      console.log(this.config);
+      this.appService.getFileContext('assets/' + this.topTitle + '.md').then(
+        context => {
+          this.topContent = context;
+        }
+      );
+      this.topTitle = this.topTitle.substring(this.topTitle.lastIndexOf('/') + 1);
     });
   }
 }
