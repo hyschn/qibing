@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NavComponent } from './global/nav/nav.component';
 import { HomeComponent } from './home/home/home.component';
+import { BlogComponent } from './blog/blog/blog.component';
 
 
 const homeRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   // { path: 'profile', component: ProfileComponent },
-  // { path: 'blog', component: BlogComponent },
+  { path: 'blog', component: BlogComponent },
 ];
 
 const routes: Routes = [

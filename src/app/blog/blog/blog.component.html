@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+        <blog-sidebar [(topic)]=topic [(article)]=article class="col-md-4 blog-sidebar"></blog-sidebar>
+        <article-list class="col-md-8 blog-main" *ngIf="!article" [(topic)]=topic [(article)]=article></article-list>
+        <article *ngIf="article" [(filePath)]=filePath class="col-md-8 blog-main"></article>
+    </div>
+</div>

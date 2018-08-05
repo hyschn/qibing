@@ -1,0 +1,32 @@
+<nav class="col-md-4 blog-sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item" (click)="changeTopic('about-this-site')">
+                <a class="nav-link active" [routerLink]="['/blog',{topic:'about-this-site'}]">
+                     About_this_site <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item" (click)="changeTopic('linux')">
+                <a class="nav-link" [routerLink]="['/blog',{topic:'linux'}]">
+                    Linux
+                </a>
+            </li>
+            <li class="nav-item" (click)="changeTopic('neo4j')">
+                <a class="nav-link" [routerLink]="['/blog',{topic:'neo4j'}]">
+                    Neo4j
+                </a>
+            </li>
+            <li class="nav-item" (click)="changeTopic('search-engine')">
+                <a class="nav-link" [routerLink]="['/blog',{topic:'search-engine'}]">
+                    Search_engine
+                </a>
+            </li>
+            <li class="nav-item" (click)="changeTopic('nlp')">
+                <a class="nav-link" [routerLink]="['/blog',{topic:'nlp'}]">
+                    NLP
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

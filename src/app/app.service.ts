@@ -13,4 +13,11 @@ export class AppService {
   getConfigJson(): Observable<any> {
     return this.http.get('assets/qibing.json');
   }
+
+  getFileContext(filePath: string): Promise<any> {
+    return this.http
+      .get(filePath)
+      .toPromise()
+      .then(res => res as any);
+  }
 }
