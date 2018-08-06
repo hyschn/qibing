@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
+import { AppService } from '../../app.service';
+
 @Component({
   selector: 'blog-sidebar',
   templateUrl: './sidebar.component.html',
@@ -15,10 +17,12 @@ export class SidebarComponent implements OnInit {
   article: string;
   @Output()
   articleChange = new EventEmitter();
+  topics = [];
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.getTopics();
   }
 
   changeTopic(topic) {
@@ -26,5 +30,17 @@ export class SidebarComponent implements OnInit {
     this.topicChange.emit(this.topic);
     this.article = null;
     this.articleChange.emit(this.article);
+  }
+
+  getTopics() {
+    this.appService.getConfigJson().subscribe(json => {
+      const blog: JSON[] = json.blog;
+      for (const key in blog) {
+        if (blog.hasOwnProperty(key)) {
+          const element = blog[key];
+          this.topics.push(element['topic']);
+        }
+      }
+    });
   }
 }
