@@ -1,0 +1,8 @@
+{
+    "no-inline-html": {
+        "allowed_elements": ["a", "h1", "h3", "HR", "p", "center"]
+    },
+    "MD033": false,
+    "MD013": false,
+    "MD041": false
+}
