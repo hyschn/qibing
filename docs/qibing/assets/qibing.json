@@ -1,0 +1,17 @@
+{
+    "home": {
+        "top": { "topic": "序", "article": "孙子序" },
+        "blogs": [
+            { "topic": "战略运筹", "article": "作战篇" }, { "topic": "作战指挥", "article": "兵势篇" }
+        ]
+    },
+    "blog": [
+        { "topic": "序", "articles": ["孙子序"] },
+        { "topic": "战略运筹", "articles": ["始计篇", "作战篇", "谋攻篇"] },
+        { "topic": "作战指挥", "articles": ["军形篇", "兵势篇", "虚实篇"] },
+        { "topic": "战场机变", "articles": ["军争篇", "九变篇", "行军篇"] },
+        { "topic": "军事地理", "articles": ["地形篇", "九地篇"] },
+        { "topic": "特殊战法", "articles": ["火攻篇", "用间篇"] }
+    ],
+    "profile": "profile"
+}
