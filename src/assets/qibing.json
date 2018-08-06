@@ -1,7 +1,9 @@
 {
     "home": {
-        "top": "序/孙子序",
-        "blogs": ["战略运筹/作战篇", "作战指挥/兵势篇"]
+        "top": { "topic": "序", "article": "孙子序" },
+        "blogs": [
+            { "topic": "战略运筹", "article": "作战篇" }, { "topic": "作战指挥", "article": "兵势篇" }
+        ]
     },
     "blog": [
         { "topic": "序", "articles": ["孙子序"] },
