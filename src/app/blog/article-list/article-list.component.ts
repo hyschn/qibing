@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
+import { AppService } from '../../app.service';
+
 @Component({
   selector: 'article-list',
   templateUrl: './article-list.component.html',
@@ -14,41 +16,42 @@ export class ArticleListComponent implements OnInit, OnChanges {
   article: string;
   @Output()
   articleChange = new EventEmitter();
+  blogs = [];
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.switchTopic();
+    this.getBlogs();
   }
 
   ngOnChanges() {
-    this.switchTopic();
+    this.getBlogs();
   }
 
   switchTopic() {
-    switch (this.topic) {
-      case 'about-this-site':
-        this.articles = ['起源', '技术', '模块', '规划', '发展历程'];
-        break;
-      case 'linux':
-        this.articles = ['commend', 'shell'];
-        break;
-      case 'neo4j':
-        this.articles = ['introduction'];
-        break;
-      case 'search-engine':
-        this.articles = ['介绍'];
-        break;
-      case 'nlp':
-        this.articles = ['introduction'];
-        break;
-      default:
-        break;
-    }
+    this.blogs.forEach(element => {
+      if (element.topic === this.topic) {
+        this.articles = element.articles;
+      }
+    });
   }
 
   changeArticle(article) {
     this.article = article;
     this.articleChange.emit(this.article);
+  }
+
+  getBlogs() {
+    this.appService.getConfigJson().subscribe(json => {
+      this.blogs = [];
+      const blog: JSON[] = json.blog;
+      for (const key in blog) {
+        if (blog.hasOwnProperty(key)) {
+          const element = blog[key];
+          this.blogs.push(element);
+        }
+      }
+      this.switchTopic();
+    });
   }
 }

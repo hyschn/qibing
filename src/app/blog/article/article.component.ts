@@ -23,6 +23,6 @@ export class ArticleComponent implements OnInit, OnChanges {
   resetRouteParams() {
     const topic = this.route.snapshot.params['topic'];
     const article = this.route.snapshot.params['article'];
-    this.filePath = 'assets/blog/' + topic + '/' + article + '.md';
+    this.filePath = 'assets/' + topic + '/' + article + '.md';
   }
 }
